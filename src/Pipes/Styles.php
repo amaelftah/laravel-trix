@@ -31,7 +31,7 @@ class Styles
             ->map(function ($tool) use ($trix) {
                 return "#container-{$trix->config['id']} .trix-button-group--$tool";
             })
-            ->implode(',') . (Arr::get($trix->config, 'hideTools', []) ? '{display:none;}' : '');
+            ->implode(',').(Arr::get($trix->config, 'hideTools', []) ? '{display:none;}' : '');
     }
 
     public function hideButtonIcons($trix)
@@ -40,6 +40,6 @@ class Styles
             ->map(function ($iconClass) use ($trix) {
                 return "#container-{$trix->config['id']} .trix-button--icon-$iconClass";
             })
-            ->implode(',') . (Arr::get($trix->config, 'hideButtonIcons', []) ? '{display:none;}' : '');
+            ->implode(',').(Arr::get($trix->config, 'hideButtonIcons', []) ? '{display:none;}' : '');
     }
 }

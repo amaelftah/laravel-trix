@@ -2,7 +2,6 @@
 
 namespace Te7aHoudini\LaravelTrix\Tests\Unit;
 
-use LaravelTrix;
 use Illuminate\Support\Str;
 use Te7aHoudini\LaravelTrix\Tests\TestCase;
 use Te7aHoudini\LaravelTrix\Tests\Models\Post;
@@ -15,7 +14,7 @@ class LaravelTrixTest extends TestCase
         $expected = <<<EOT
         <span id='container-post-description-1'> <style>  </style><input id='post-description-1' value='' name='post-trixFields[description]' type='hidden'><input id='attachment-post-description-1' value='[]' name='attachment-post-trixFields[description]' type='hidden'><trix-editor class='trix-content' input='post-description-1' data-config='{"id":"post-description-1","modelClass":"Te7aHoudini\\\LaravelTrix\\\Tests\\\Models\\\Post","field":"description"}'></trix-editor> </span>
         EOT;
-        
+
         $this->assertEquals(
             $expected,
             $this->post->trix('description')->__toString()
@@ -25,7 +24,7 @@ class LaravelTrixTest extends TestCase
     /** @test */
     public function it_hides_toolbar()
     {
-        $expected = <<<EOT
+        $expected = <<<'EOT'
                 <style> #container-post-description-1 trix-toolbar{display:none;} </style>
                 EOT;
 
@@ -37,10 +36,10 @@ class LaravelTrixTest extends TestCase
     /** @test */
     public function it_hides_tools()
     {
-        $expected = <<<EOT
+        $expected = <<<'EOT'
             <style> #container-post-description-1 .trix-button-group--foo,#container-post-description-1 .trix-button-group--bar{display:none;} </style>
             EOT;
- 
+
         $this->assertTrue(
             Str::contains($this->post->trix('description', ['hideTools' => ['foo', 'bar']])->__toString(), $expected)
         );
@@ -49,10 +48,10 @@ class LaravelTrixTest extends TestCase
     /** @test */
     public function it_hides_button_icons()
     {
-        $expected = <<<EOT
+        $expected = <<<'EOT'
                 <style> #container-post-description-1 .trix-button--icon-foo,#container-post-description-1 .trix-button--icon-bar{display:none;} </style>
                 EOT;
-     
+
         $this->assertTrue(
             Str::contains($this->post->trix('description', ['hideButtonIcons' => ['foo', 'bar']])->__toString(), $expected)
         );
@@ -91,7 +90,7 @@ class LaravelTrixTest extends TestCase
 
         $this->assertTrue(
             Str::contains($this->post->trix('description', ['containerElement' => 'fooElement'])->__toString(), $expected)
-        ); 
+        );
     }
 
     /** @test */
@@ -109,7 +108,7 @@ class LaravelTrixTest extends TestCase
     /** @test */
     public function it_returns_new_model_using_app_make()
     {
-        $expected = <<<EOT
+        $expected = <<<'EOT'
         <span id='container-foomodel-BarField-new-model'> <style>  </style><input id='foomodel-BarField-new-model' value='' name='foomodel-trixFields[BarField]' type='hidden'><input id='attachment-foomodel-BarField-new-model' value='[]' name='attachment-foomodel-trixFields[BarField]' type='hidden'><trix-editor class='trix-content' input='foomodel-BarField-new-model' data-config='{"id":"foomodel-BarField-new-model","modelClass":"FooModel","field":"BarField"}'></trix-editor> </span>
         EOT;
 
