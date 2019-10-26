@@ -24,7 +24,7 @@ class LaravelTrixTest extends TestCase
     /** @test */
     public function it_hides_toolbar()
     {
-        $expected = <<<'EOT'
+        $expected = <<<EOT
                 <style> #container-post-description-1 trix-toolbar{display:none;} </style>
                 EOT;
 
@@ -36,7 +36,7 @@ class LaravelTrixTest extends TestCase
     /** @test */
     public function it_hides_tools()
     {
-        $expected = <<<'EOT'
+        $expected = <<<EOT
             <style> #container-post-description-1 .trix-button-group--foo,#container-post-description-1 .trix-button-group--bar{display:none;} </style>
             EOT;
 
@@ -48,7 +48,7 @@ class LaravelTrixTest extends TestCase
     /** @test */
     public function it_hides_button_icons()
     {
-        $expected = <<<'EOT'
+        $expected = <<<EOT
                 <style> #container-post-description-1 .trix-button--icon-foo,#container-post-description-1 .trix-button--icon-bar{display:none;} </style>
                 EOT;
 
