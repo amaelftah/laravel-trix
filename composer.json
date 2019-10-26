@@ -1,0 +1,49 @@
+{
+    "name": "te7a-houdini/laravel-trix",
+    "description": "trix editor for laravel inspired by ActionText for rails",
+    "keywords": [
+        "te7a-houdini",
+        "laravel-trix"
+    ],
+    "homepage": "https://github.com/te7ahoudini/laravel-trix",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ahmed Abd El Ftah",
+            "email": "ahmedabdelftah95165@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "laravel/framework": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|~6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.5|~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Te7aHoudini\\LaravelTrix\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Te7aHoudini\\LaravelTrix\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Te7aHoudini\\LaravelTrix\\LaravelTrixServiceProvider"
+            ]
+        }
+    }
+}
