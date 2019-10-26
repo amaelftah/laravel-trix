@@ -24,7 +24,7 @@ EOT;
     /** @test */
     public function it_hides_toolbar()
     {
-        $expected = <<<EOT
+        $expected = <<<'EOT'
 <style> #container-post-description-1 trix-toolbar{display:none;} </style>
 EOT;
 
@@ -36,7 +36,7 @@ EOT;
     /** @test */
     public function it_hides_tools()
     {
-        $expected = <<<EOT
+        $expected = <<<'EOT'
 <style> #container-post-description-1 .trix-button-group--foo,#container-post-description-1 .trix-button-group--bar{display:none;} </style>
 EOT;
 
@@ -48,7 +48,7 @@ EOT;
     /** @test */
     public function it_hides_button_icons()
     {
-        $expected = <<<EOT
+        $expected = <<<'EOT'
 <style> #container-post-description-1 .trix-button--icon-foo,#container-post-description-1 .trix-button--icon-bar{display:none;} </style>
 EOT;
 
@@ -108,7 +108,7 @@ EOT;
     /** @test */
     public function it_returns_new_model_using_app_make()
     {
-        $expected = <<<EOT
+        $expected = <<<'EOT'
 <span id='container-foomodel-BarField-new-model'> <style>  </style><input id='foomodel-BarField-new-model' value='' name='foomodel-trixFields[BarField]' type='hidden'><input id='attachment-foomodel-BarField-new-model' value='[]' name='attachment-foomodel-trixFields[BarField]' type='hidden'><trix-editor class='trix-content' input='foomodel-BarField-new-model' data-config='{"id":"foomodel-BarField-new-model","modelClass":"FooModel","field":"BarField"}'></trix-editor> </span>
 EOT;
 
