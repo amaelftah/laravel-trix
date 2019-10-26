@@ -1,5 +1,15 @@
 <p align="center"><img height="400px" src="logo.svg"></p>
 
+<p align="center">
+<a href="https://github.com/Te7a-Houdini/laravel-trix/releases"><img src="https://img.shields.io/github/release/Te7a-Houdini/laravel-trix.svg?style=flat-square" alt="Releases"></a>
+<a href="https://travis-ci.org/Te7a-Houdini/laravel-trix"><img src="https://img.shields.io/travis/Te7a-Houdini/laravel-trix/master.svg?style=flat-square" alt="Build Status"></a>
+<a href="https://github.styleci.io/repos/217703400"><img src="https://github.styleci.io/repos/217703400/shield" alt="StyleCI"></a>
+<a href="https://scrutinizer-ci.com/g/Te7a-Houdini/laravel-trix/?branch=master"><img src="https://img.shields.io/scrutinizer/g/Te7a-Houdini/laravel-trix.svg?style=flat-square" alt="Code Quality"></a>
+<a href="https://github.com/Te7a-Houdini/laravel-trix/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/Te7a-Houdini/laravel-trix.svg?style=flat-square" alt="License"></a>
+<a href="https://packagist.org/packages/te7a-houdini/laravel-trix"><img src="https://img.shields.io/packagist/dt/Te7a-Houdini/laravel-trix.svg?style=flat-square" alt="Downloads"></a>
+
+</p>
+
 ## Configurable [Basecamp Trix Editor](https://trix-editor.org/) delivered to your laravel application
 
 inspired by [Rails Action Text](https://edgeguides.rubyonrails.org/action_text_overview.html)
