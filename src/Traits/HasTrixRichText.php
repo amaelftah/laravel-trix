@@ -16,7 +16,7 @@ trait HasTrixRichText
     public static function bootHasTrixRichText()
     {
         static::saving(function ($model) {
-            $trixInputName = Str::lower(class_basename($model)) . '-trixFields';
+            $trixInputName = Str::lower(class_basename($model)).'-trixFields';
 
             $model->savedTrixFields = Arr::get($model, $trixInputName, []);
 
@@ -49,7 +49,7 @@ trait HasTrixRichText
             $model->savedTrixFields = [];
         });
     }
-   
+
     public function trix($field, $config = [])
     {
         return app('laravel-trix')->make($this, $field, $config);

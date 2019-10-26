@@ -18,7 +18,7 @@ class TrixAttachmentController extends Controller
             'modelClass' => 'required',
             'field' => 'required',
         ]);
-        
+
         if ($validator->fails()) {
             return response()->json(['errors'=>$validator->errors()], Response::HTTP_UNPROCESSABLE_ENTITY);
         }

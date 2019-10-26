@@ -51,11 +51,11 @@ class HasTrixRichTextTest extends TestCase
                 ],
             ],
         ]);
-        
+
         $this->assertTrue(
             Str::contains($post->trix('content')->__toString(), "value='[\"randomImage.jpg\"]' name='attachment-post-trixFields[content]' type='hidden'")
         );
 
-        $this->assertFalse((boolean) TrixAttachment::first()->is_pending);
+        $this->assertFalse((bool) TrixAttachment::first()->is_pending);
     }
 }

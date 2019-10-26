@@ -18,7 +18,7 @@ class LaravelTrix
     public $config;
 
     public $html = '';
-    
+
     public function make($model, $field, $config = [])
     {
         $this->model = $model;
@@ -32,8 +32,8 @@ class LaravelTrix
 
     public function formatFieldConfig($field, $config)
     {
-        $config['id'] = $config['id'] ?? $this->loweredModelName . '-' . $field . '-' . (is_object($this->model) && $this->model->exists ? $this->model->id : 'new-model');
-        
+        $config['id'] = $config['id'] ?? $this->loweredModelName.'-'.$field.'-'.(is_object($this->model) && $this->model->exists ? $this->model->id : 'new-model');
+
         $config['modelClass'] = is_object($this->model) ? get_class($this->model) : $this->model;
 
         $config['field'] = $field;

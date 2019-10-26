@@ -18,7 +18,7 @@ class TestCase extends BaseTestCase
     protected function setUp() :void
     {
         parent::setUp();
-        
+
         $this->app['db']->connection()->getSchemaBuilder()->create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
