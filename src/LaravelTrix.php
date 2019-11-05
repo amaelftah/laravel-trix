@@ -2,12 +2,12 @@
 
 namespace Te7aHoudini\LaravelTrix;
 
-use Illuminate\Support\Str;
 use Illuminate\Pipeline\Pipeline;
+use Illuminate\Support\Str;
+use Te7aHoudini\LaravelTrix\Pipes\AttachmentInput;
 use Te7aHoudini\LaravelTrix\Pipes\Input;
 use Te7aHoudini\LaravelTrix\Pipes\Styles;
 use Te7aHoudini\LaravelTrix\Pipes\TrixEditor;
-use Te7aHoudini\LaravelTrix\Pipes\AttachmentInput;
 
 class LaravelTrix
 {

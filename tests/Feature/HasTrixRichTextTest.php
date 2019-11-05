@@ -2,11 +2,11 @@
 
 namespace Te7aHoudini\LaravelTrix\Tests\Feature;
 
-use Illuminate\Support\Str;
-use Te7aHoudini\LaravelTrix\Tests\TestCase;
-use Te7aHoudini\LaravelTrix\Tests\Models\Post;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Str;
 use Te7aHoudini\LaravelTrix\Models\TrixAttachment;
+use Te7aHoudini\LaravelTrix\Tests\Models\Post;
+use Te7aHoudini\LaravelTrix\Tests\TestCase;
 
 class HasTrixRichTextTest extends TestCase
 {

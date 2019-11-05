@@ -3,10 +3,10 @@
 namespace Te7aHoudini\LaravelTrix\Tests;
 
 use Illuminate\Database\Schema\Blueprint;
-use Te7aHoudini\LaravelTrix\LaravelTrixFacade;
-use Te7aHoudini\LaravelTrix\Tests\Models\Post;
 use Orchestra\Testbench\TestCase as BaseTestCase;
+use Te7aHoudini\LaravelTrix\LaravelTrixFacade;
 use Te7aHoudini\LaravelTrix\LaravelTrixServiceProvider;
+use Te7aHoudini\LaravelTrix\Tests\Models\Post;
 
 class TestCase extends BaseTestCase
 {
