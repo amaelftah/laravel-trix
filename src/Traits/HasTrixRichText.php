@@ -30,7 +30,7 @@ trait HasTrixRichText
             foreach ($model->savedTrixFields as $field => $content) {
                 TrixRichText::updateOrCreate([
                     'model_id' => $model->id,
-                    'model_type' => get_class($model),
+                    'model_type' => $model->getMorphClass(),
                     'field' => $field,
                 ], [
                     'field' => $field,
