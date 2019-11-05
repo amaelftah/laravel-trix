@@ -4,8 +4,8 @@ namespace Te7aHoudini\LaravelTrix\Traits;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Te7aHoudini\LaravelTrix\Models\TrixRichText;
 use Te7aHoudini\LaravelTrix\Models\TrixAttachment;
+use Te7aHoudini\LaravelTrix\Models\TrixRichText;
 
 trait HasTrixRichText
 {
@@ -30,7 +30,7 @@ trait HasTrixRichText
             foreach ($model->savedTrixFields as $field => $content) {
                 TrixRichText::updateOrCreate([
                     'model_id' => $model->id,
-                    'model_type' => get_class($model),
+                    'model_type' => $model->getMorphClass(),
                     'field' => $field,
                 ], [
                     'field' => $field,
