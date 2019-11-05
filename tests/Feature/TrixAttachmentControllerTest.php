@@ -2,12 +2,12 @@
 
 namespace Te7aHoudini\LaravelTrix\Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use Te7aHoudini\LaravelTrix\Tests\TestCase;
-use Te7aHoudini\LaravelTrix\Tests\Models\Post;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Te7aHoudini\LaravelTrix\Models\TrixAttachment;
+use Te7aHoudini\LaravelTrix\Tests\Models\Post;
+use Te7aHoudini\LaravelTrix\Tests\TestCase;
 
 class TrixAttachmentControllerTest extends TestCase
 {

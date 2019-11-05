@@ -3,8 +3,8 @@
 namespace Te7aHoudini\LaravelTrix\Tests\Unit;
 
 use Illuminate\Support\Str;
-use Te7aHoudini\LaravelTrix\Tests\TestCase;
 use Te7aHoudini\LaravelTrix\Tests\Models\Post;
+use Te7aHoudini\LaravelTrix\Tests\TestCase;
 
 class LaravelTrixTest extends TestCase
 {
