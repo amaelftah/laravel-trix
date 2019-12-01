@@ -44,7 +44,7 @@ class TrixAttachmentControllerTest extends TestCase
             'disk' => 'fooDisk',
         ]);
 
-        $this->delete(route('laravel-trix.destroy',['attachment' => 'randomImage.jpg']));
+        $this->delete(route('laravel-trix.destroy', ['attachment' => 'randomImage.jpg']));
 
         $this->assertTrue(
             TrixAttachment::where('attachment', 'randomImage.jpg')
