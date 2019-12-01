@@ -12,7 +12,7 @@ class LaravelTrixTest extends TestCase
     public function it_returns_default_trix_html()
     {
         $expected = <<<EOT
-<span id='container-post-description-1'> <laravel-trix-instance-style style='display:none;'>  </laravel-trix-instance-style><input id='post-description-1' value='' name='post-trixFields[description]' type='hidden'><input id='attachment-post-description-1' value='[]' name='attachment-post-trixFields[description]' type='hidden'><trix-editor class='trix-content' input='post-description-1' data-config='{"id":"post-description-1","modelClass":"Te7aHoudini\\\LaravelTrix\\\Tests\\\Models\\\Post","field":"description"}'></trix-editor> </span>
+<span v-pre id='container-post-description-1'> <laravel-trix-instance-style style='display:none;'>  </laravel-trix-instance-style><input id='post-description-1' value='' name='post-trixFields[description]' type='hidden'><input id='attachment-post-description-1' value='[]' name='attachment-post-trixFields[description]' type='hidden'><trix-editor class='trix-content' input='post-description-1' data-config='{"id":"post-description-1","modelClass":"Te7aHoudini\\\LaravelTrix\\\Tests\\\Models\\\Post","field":"description"}'></trix-editor> </span>
 EOT;
 
         $this->assertEquals(
@@ -61,7 +61,7 @@ EOT;
     public function it_changes_id()
     {
         $expected = <<<EOT
-<span id='container-foo'> <laravel-trix-instance-style style='display:none;'>  </laravel-trix-instance-style><input id='foo' value='' name='post-trixFields[description]' type='hidden'><input id='attachment-foo' value='[]' name='attachment-post-trixFields[description]' type='hidden'><trix-editor class='trix-content' input='foo' data-config='{"id":"foo","modelClass":"Te7aHoudini\\\LaravelTrix\\\Tests\\\Models\\\Post","field":"description"}'></trix-editor> </span>
+<span v-pre id='container-foo'> <laravel-trix-instance-style style='display:none;'>  </laravel-trix-instance-style><input id='foo' value='' name='post-trixFields[description]' type='hidden'><input id='attachment-foo' value='[]' name='attachment-post-trixFields[description]' type='hidden'><trix-editor class='trix-content' input='foo' data-config='{"id":"foo","modelClass":"Te7aHoudini\\\LaravelTrix\\\Tests\\\Models\\\Post","field":"description"}'></trix-editor> </span>
 EOT;
 
         $this->assertTrue(
@@ -85,7 +85,7 @@ EOT;
     public function it_change_container_element()
     {
         $expected = <<<EOT
-<fooElement id='container-post-description-1'> <laravel-trix-instance-style style='display:none;'>  </laravel-trix-instance-style><input id='post-description-1' value='' name='post-trixFields[description]' type='hidden'><input id='attachment-post-description-1' value='[]' name='attachment-post-trixFields[description]' type='hidden'><trix-editor class='trix-content' input='post-description-1' data-config='{"containerElement":"fooElement","id":"post-description-1","modelClass":"Te7aHoudini\\\LaravelTrix\\\Tests\\\Models\\\Post","field":"description"}'></trix-editor> </fooElement>
+<fooElement v-pre id='container-post-description-1'> <laravel-trix-instance-style style='display:none;'>  </laravel-trix-instance-style><input id='post-description-1' value='' name='post-trixFields[description]' type='hidden'><input id='attachment-post-description-1' value='[]' name='attachment-post-trixFields[description]' type='hidden'><trix-editor class='trix-content' input='post-description-1' data-config='{"containerElement":"fooElement","id":"post-description-1","modelClass":"Te7aHoudini\\\LaravelTrix\\\Tests\\\Models\\\Post","field":"description"}'></trix-editor> </fooElement>
 EOT;
 
         $this->assertTrue(
@@ -97,7 +97,7 @@ EOT;
     public function it_renders_correct_id_for_new_model()
     {
         $expected = <<<EOT
-<span id='container-post-description-new-model'> <laravel-trix-instance-style style='display:none;'>  </laravel-trix-instance-style><input id='post-description-new-model' value='' name='post-trixFields[description]' type='hidden'><input id='attachment-post-description-new-model' value='[]' name='attachment-post-trixFields[description]' type='hidden'><trix-editor class='trix-content' input='post-description-new-model' data-config='{"id":"post-description-new-model","modelClass":"Te7aHoudini\\\LaravelTrix\\\Tests\\\Models\\\Post","field":"description"}'></trix-editor> </span>
+<span v-pre id='container-post-description-new-model'> <laravel-trix-instance-style style='display:none;'>  </laravel-trix-instance-style><input id='post-description-new-model' value='' name='post-trixFields[description]' type='hidden'><input id='attachment-post-description-new-model' value='[]' name='attachment-post-trixFields[description]' type='hidden'><trix-editor class='trix-content' input='post-description-new-model' data-config='{"id":"post-description-new-model","modelClass":"Te7aHoudini\\\LaravelTrix\\\Tests\\\Models\\\Post","field":"description"}'></trix-editor> </span>
 EOT;
 
         $this->assertTrue(
@@ -109,7 +109,7 @@ EOT;
     public function it_returns_new_model_using_app_make()
     {
         $expected = <<<'EOT'
-<span id='container-foomodel-BarField-new-model'> <laravel-trix-instance-style style='display:none;'>  </laravel-trix-instance-style><input id='foomodel-BarField-new-model' value='' name='foomodel-trixFields[BarField]' type='hidden'><input id='attachment-foomodel-BarField-new-model' value='[]' name='attachment-foomodel-trixFields[BarField]' type='hidden'><trix-editor class='trix-content' input='foomodel-BarField-new-model' data-config='{"id":"foomodel-BarField-new-model","modelClass":"FooModel","field":"BarField"}'></trix-editor> </span>
+<span v-pre id='container-foomodel-BarField-new-model'> <laravel-trix-instance-style style='display:none;'>  </laravel-trix-instance-style><input id='foomodel-BarField-new-model' value='' name='foomodel-trixFields[BarField]' type='hidden'><input id='attachment-foomodel-BarField-new-model' value='[]' name='attachment-foomodel-trixFields[BarField]' type='hidden'><trix-editor class='trix-content' input='foomodel-BarField-new-model' data-config='{"id":"foomodel-BarField-new-model","modelClass":"FooModel","field":"BarField"}'></trix-editor> </span>
 EOT;
 
         $this->assertTrue(

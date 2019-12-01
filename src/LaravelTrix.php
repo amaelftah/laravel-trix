@@ -59,7 +59,7 @@ class LaravelTrix
         return function () {
             $tag = $this->config['containerElement'] ?? 'span';
 
-            return "<$tag id='container-{$this->config['id']}'> $this->html </$tag>";
+            return "<$tag v-pre id='container-{$this->config['id']}'> $this->html </$tag>";
         };
     }
 }
