@@ -18,7 +18,7 @@ class TrixAttachmentControllerTest extends TestCase
     {
         Storage::fake('fooDisk');
 
-        $response = $this->json('POST', 'laravel-trix/attachment', [
+        $response = $this->json('POST', route('laravel-trix.store'), [
             'file' => UploadedFile::fake()->image('foo.jpg'),
             'modelClass' => Post::class,
             'field' => 'fooField',
@@ -44,7 +44,7 @@ class TrixAttachmentControllerTest extends TestCase
             'disk' => 'fooDisk',
         ]);
 
-        $this->delete('laravel-trix/attachment/randomImage.jpg');
+        $this->delete(route('laravel-trix.destroy',['attachment' => 'randomImage.jpg']));
 
         $this->assertTrue(
             TrixAttachment::where('attachment', 'randomImage.jpg')

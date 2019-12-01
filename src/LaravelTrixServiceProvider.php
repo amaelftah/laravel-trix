@@ -24,7 +24,7 @@ class LaravelTrixServiceProvider extends ServiceProvider
             'prefix' => 'laravel-trix',
         ], function () {
             Route::post('attachment', config('laravel-trix.store_attachment_action'))->name('laravel-trix.store');
-            Route::delete('attachment/{url}', config('laravel-trix.destroy_attachment_action'))->name('laravel-trix.destroy');
+            Route::delete('attachment/{attachment}', config('laravel-trix.destroy_attachment_action'))->name('laravel-trix.destroy');
         });
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-trix');
