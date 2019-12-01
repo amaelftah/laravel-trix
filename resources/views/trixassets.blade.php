@@ -120,4 +120,17 @@ function laravelTrixConfig (event) {
     return JSON.parse(event.target.getAttribute("data-config"));
 }
 
+window.onload = function() {
+    var laravelTrixInstanceStyles =  document.getElementsByTagName('laravel-trix-instance-style');
+
+    var style = document.createElement('style');
+        style.type = 'text/css';
+
+    for (var tag of laravelTrixInstanceStyles) {
+        style.innerHTML += tag.textContent + ' ';
+    }
+
+    document.getElementsByTagName('head')[0].appendChild(style);
+}
+
 </script>
