@@ -13,7 +13,7 @@ class Styles
         $this->hideTools($trix);
         $this->hideButtonIcons($trix);
 
-        $trix->html = "<style> {$trix->html} </style>";
+        $trix->html = "<laravel-trix-instance-style style='display:none;'> {$trix->html} </laravel-trix-instance-style>";
 
         return $next($trix);
     }
