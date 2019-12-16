@@ -86,7 +86,7 @@ now lets try to store `content` rich text field when hitting submit button.
     </head>
 
     <body>
-        <form method="POST" action="route('posts.store')">
+        <form method="POST" action="{{ route('posts.store') }}">
             @csrf
             @trix(\App\Post::class, 'content')
             <input type="submit">
