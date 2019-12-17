@@ -132,7 +132,7 @@ there's multiple ways to render trix for already existing model
 
 @trix($post, 'content')
 
-{!! $post->trix('content') !!} //must use HasRichText trait in order for $model->trix() method work
+{!! $post->trix('content') !!} //must use HasTrixRichText trait in order for $model->trix() method work
 
 {!! app('laravel-trix')->make($post, 'content') !!}
 ```
@@ -146,7 +146,7 @@ the uploaded file will be stored in `trix_attachments` table as `pending` attach
 
 once model is saved . all `pending` attachments will have `is_pending` column = `0`
 
-so in order to make storing attachment very easy make sure to use `HasRichText` trait in your model. 
+so in order to make storing attachment very easy make sure to use `HasTrixRichText` trait in your model. 
 
 ```php
 Post::create(request()->all());
