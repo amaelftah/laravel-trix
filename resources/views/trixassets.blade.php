@@ -126,7 +126,7 @@ window.onload = function() {
     var style = document.createElement('style');
         style.type = 'text/css';
 
-    for (var tag in laravelTrixInstanceStyles) {
+    for (var tag of laravelTrixInstanceStyles) {
         style.innerHTML += tag.textContent + ' ';
     }
 
