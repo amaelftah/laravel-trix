@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.0/trix.css">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.0/trix.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.0/trix.js" defer></script>
 
 <script>
 
@@ -19,15 +19,15 @@ addEventListener("trix-attachment-remove", function(event) {
     var config = laravelTrixConfig(event);
 
     var xhr = new XMLHttpRequest();
-    
+
     var attachment = event.attachment.attachment.attributes.values.url.split("/").pop();
 
     xhr.open("DELETE", "{{route('laravel-trix.destroy',['attachment' => ':attachment'])}}".replace(':attachment',attachment), true);
 
     setAttachementUrlCollectorValue('attachment-' + config['id'], function(collector){
-        for( var i = 0; i < collector.length; i++){ 
+        for( var i = 0; i < collector.length; i++){
             if ( collector[i] === attachment) {
-                collector.splice(i, 1); 
+                collector.splice(i, 1);
             }
         }
 
