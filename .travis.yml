@@ -36,6 +36,8 @@ matrix:
       env: LARAVEL='7.*' TESTBENCH='5.*' COMPOSER_FLAGS='--prefer-stable'
     - php: 7.4snapshot
       env: LARAVEL='7.*' TESTBENCH='5.*' COMPOSER_FLAGS='--prefer-stable'
+    - php: 8.0
+      env: LARAVEL='8.*' TESTBENCH='6.*' COMPOSER_FLAGS='--prefer-stable'
   fast_finish: true
   allow_failures:
     - php: 7.4snapshot
@@ -47,6 +49,6 @@ before_install:
 
 install:
   - travis_retry composer update ${COMPOSER_FLAGS} --prefer-dist --no-interaction --no-suggest
-  
+
 script:
   - vendor/bin/phpunit --coverage-text
