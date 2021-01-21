@@ -90,7 +90,7 @@ now lets try to store `content` rich text field when hitting submit button.
             @csrf
             @trix(\App\Post::class, 'content')
             <input type="submit">
-        </form>    
+        </form>
     </body>
 </html>
 
@@ -106,7 +106,7 @@ use Te7aHoudini\LaravelTrix\Traits\HasTrixRichText;
 class Post extends Model
 {
     use HasTrixRichText;
-    
+
     protected $guarded = [];
 }
 ```
@@ -114,7 +114,7 @@ then you can easily store any rich text fields by multiple ways:
 
 ```php
 Post::create(request()->all());
- 
+
 //storing must follow this convention (model lowered class name)-trixFields
 Post::create([
     'post-trixFields' => request('post-trixFields'),
@@ -125,7 +125,7 @@ Post::create([
 
 ### Render Trix For Existing Model
 
-there's multiple ways to render trix for already existing model 
+there's multiple ways to render trix for already existing model
 
 ```php
 <!-- inside view blade file -->
@@ -146,12 +146,12 @@ the uploaded file will be stored in `trix_attachments` table as `pending` attach
 
 once model is saved . all `pending` attachments will have `is_pending` column = `0`
 
-so in order to make storing attachment very easy make sure to use `HasTrixRichText` trait in your model. 
+so in order to make storing attachment very easy make sure to use `HasTrixRichText` trait in your model.
 
 ```php
 Post::create(request()->all());
- 
-//storing must follow this convention (model lowered class name)-trixFields 
+
+//storing must follow this convention (model lowered class name)-trixFields
 //and for attachment must follow attachment-(model lowered class name)-trixFields
 Post::create([
     'post-trixFields' => request('post-trixFields'),
@@ -180,6 +180,29 @@ or if you want to change the storage disk for specific rich text field you can d
 @trix($post, 'content', ['disk' => 'local'])
 ```
 
+### Deleting Rich Text Field and Attachments
+
+you can remove related rich text fields and attachments on a model deleting:
+
+```php
+class Post extends Model
+{
+    use HasTrixRichText;
+
+    protected $guarded = [];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleted(function ($post) {
+            $post->trixRichText->each->delete();
+            $post->trixAttachments->each->purge();
+        });
+    }
+}
+```
+
 ### Configuration Table
 
 if you want to hide buttons or toolbar you can do this. for more configuration refer to the table below.
@@ -190,7 +213,7 @@ if you want to hide buttons or toolbar you can do this. for more configuration r
 @trix($post, 'content', [ 'hideTools' => ['text-tools'] ])
 
 ```
-| configuration   | type    | values | description    
+| configuration   | type    | values | description
 |-----------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------
 | hideToolbar | Boolean | True or False | hides the the toolbar
 | hideTools   | Array   | ['text-tools', 'block-tools', 'file-tools', 'history-tools'] | hides group of buttons
