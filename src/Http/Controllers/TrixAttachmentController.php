@@ -39,7 +39,7 @@ class TrixAttachmentController extends Controller
 
     public function destroy($url)
     {
-        $attachment = TrixAttachment::where('attachment', 'LIKE', "%" . basename($url))->first();
+        $attachment = TrixAttachment::where('attachment', 'LIKE', '%'.basename($url))->first();
 
         return response()->json(optional($attachment)->purge());
     }
