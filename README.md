@@ -219,7 +219,6 @@ if you want to hide buttons or toolbar you can do this. for more configuration r
 | hideTools   | Array   | ['text-tools', 'block-tools', 'file-tools', 'history-tools'] | hides group of buttons
 | hideButtonIcons   | Array   | ['attach', 'bold', 'italic', 'strike', 'link', 'heading-1', 'quote', 'code', 'bullet-list', 'number-list',  'decrease-nesting-level', 'increase-nesting-level'] | hides a single button
 | disk   | String   | 'local' or 's3' or 'any-disk' | sets the attachment storage per field
-| path   | String   | 'any-path' | customize the name or path of the stored file on disk
 | id     | String  | 'any-value-you-want' | the id of input which renders [trix. check this link](https://github.com/basecamp/trix#integrating-with-forms) . current id follows this convention `(model lowered class name)-field-modelId` like `post-content-1` or `post-content-new-model`
 | containerElement | String | valid html tag like `span` or `div` | default container tag is set to `span` you can change it as you want
 
