@@ -9,7 +9,7 @@ class Input
     public function handle(LaravelTrix $trix, \Closure $next)
     {
         $html = is_object($trix->model) && $trix->model->exists ? optional($trix->model->trixRichText()->where('field', $trix->config['field'])->first())->content : old($trix->loweredModelName.'-trixFields.'.$trix->config['field'], '');
-        
+
         //Convert both double and single quotes.
         $html = htmlspecialchars($html, ENT_QUOTES);
 
