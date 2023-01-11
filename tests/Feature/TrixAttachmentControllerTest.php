@@ -23,7 +23,7 @@ class TrixAttachmentControllerTest extends TestCase
             'modelClass' => Post::class,
             'field' => 'fooField',
             'disk' => 'fooDisk',
-            'path' => 'fooPath'
+            'path' => 'fooPath',
         ]);
         $this->assertTrue(
             TrixAttachment::where('attachment', 'LIKE', '%'.basename($response->decodeResponseJson()->json('url')))
