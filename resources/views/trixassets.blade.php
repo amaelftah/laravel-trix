@@ -113,10 +113,6 @@ function createFormData(data) {
         formData.append("disk", data.disk);
     }
 
-    if(data.path != undefined) {
-        formData.append("path", data.path);
-    }
-
     return formData;
 }
 
