@@ -23,7 +23,7 @@ class TrixAttachmentController extends Controller
             return response()->json(['errors'=>$validator->errors()], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        $attachment = $request->file->store('/', $request->disk ?? config('laravel-trix.storage_disk'));
+        $attachment = $request->file->store($request->path ?? '/', $request->disk ?? config('laravel-trix.storage_disk'));
 
         $url = Storage::disk($request->disk ?? config('laravel-trix.storage_disk'))->url($attachment);
 
@@ -39,7 +39,7 @@ class TrixAttachmentController extends Controller
 
     public function destroy($url)
     {
-        $attachment = TrixAttachment::where('attachment', basename($url))->first();
+        $attachment = TrixAttachment::where('attachment', 'LIKE', '%'.basename($url))->first();
 
         return response()->json(optional($attachment)->purge());
     }
