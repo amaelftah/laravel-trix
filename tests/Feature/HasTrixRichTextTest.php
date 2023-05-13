@@ -58,4 +58,16 @@ class HasTrixRichTextTest extends TestCase
 
         $this->assertFalse((bool) TrixAttachment::first()->is_pending);
     }
+
+    /** @test */
+    public function it_renders_the_content()
+    {
+        $post = Post::create([
+            'post-trixFields' => [
+                'content' => $expected = '<h1>foo</h1>',
+            ],
+        ]);
+
+        $this->assertEquals($expected, $post->trixRender('content'));
+    }
 }
