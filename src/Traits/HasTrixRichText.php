@@ -39,11 +39,15 @@ trait HasTrixRichText
 
                 $attachments = Arr::get($model->savedAttachments, $field, []);
 
-                TrixAttachment::whereIn('attachment', is_string($attachments) ? json_decode($attachments) : $attachments)
-                    ->update([
-                        'is_pending' => 0,
-                        'attachable_id' => $model->id,
-                    ]);
+                $attachments = is_string($attachments) ? json_decode($attachments) : $attachments;
+
+                foreach ($attachments as $attachment) {
+                    TrixAttachment::where('attachment', 'LIKE', "%$attachment")
+                        ->update([
+                            'is_pending' => 0,
+                            'attachable_id' => $model->id,
+                        ]);
+                }
             }
 
             $model->savedTrixFields = [];
