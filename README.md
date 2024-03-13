@@ -137,6 +137,15 @@ there's multiple ways to render trix for already existing model
 {!! app('laravel-trix')->make($post, 'content') !!}
 ```
 
+### Render Html For Existing Model
+
+You can render the html content for already existing model
+
+```php
+<!-- inside view blade file -->
+
+{!! $post->trixRender('content') !!} //must use HasTrixRichText trait in order for $model->trixRender() method work
+```
 
 ### Storing Attachment
 

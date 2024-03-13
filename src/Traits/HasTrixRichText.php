@@ -64,4 +64,9 @@ trait HasTrixRichText
     {
         return $this->morphMany(TrixAttachment::class, 'attachable');
     }
+
+    public function trixRender($field)
+    {
+        return $this->trixRichText->where('field', $field)->first()->content;
+    }
 }
